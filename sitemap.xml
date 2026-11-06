@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://prontialatam.github.io/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/privacidad</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/privacidad" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/privacy" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/privacy</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/privacidad" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/privacy" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/terminos</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/terminos" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/terms" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/terms</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/terminos" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/terms" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/implantes-dentales</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/implantes-dentales" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/dental-implants" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/dental-implants</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/implantes-dentales" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/dental-implants" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/protesis-dentales</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/protesis-dentales" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/dental-prosthetics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/dental-prosthetics</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/protesis-dentales" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/dental-prosthetics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/periodoncia</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/periodoncia" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/periodontics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/periodontics</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/periodoncia" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/periodontics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/ortodoncia</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/ortodoncia" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/orthodontics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/orthodontics</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/ortodoncia" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/orthodontics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/cirugia-bucal</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/cirugia-bucal" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/oral-surgery" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/oral-surgery</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/cirugia-bucal" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/oral-surgery" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/odontopediatria</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/odontopediatria" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/pediatric-dentistry" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/pediatric-dentistry</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/odontopediatria" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/pediatric-dentistry" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/estetica-dental</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/estetica-dental" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/aesthetic-dentistry" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/aesthetic-dentistry</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/estetica-dental" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/aesthetic-dentistry" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/tratamientos/endodoncia</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/endodoncia" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/endodontics" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/treatments/endodontics</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/endodoncia" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/endodontics" />
+</url>
+</urlset>
