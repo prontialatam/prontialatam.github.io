@@ -1,0 +1,10 @@
+@media (prefers-reduced-motion: no-preference) {
+  .typewriter-title-ready.typewriter-title-visible {
+    animation: typewriter-title-reveal var(--type-duration, 1.3s) steps(var(--type-steps, 32), end) both;
+  }
+}
+
+@keyframes typewriter-title-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}

@@ -1,0 +1,48 @@
+header nav [data-travel-nav] { display: inline-flex; align-items: center; gap: .4rem; }
+header nav [data-travel-nav] svg { color: #e4bb55; flex: none; }
+
+.footer-grid-three { grid-template-columns: 1.35fr .9fr 1.3fr !important; gap: clamp(2rem, 5vw, 5rem); }
+.footer-instagram { display: inline-flex !important; align-items: center; gap: .65rem; margin-top: 1rem; color: #e9c568 !important; width: fit-content; }
+.footer-instagram:hover { color: #fff !important; }
+.footer-instagram svg { width: 29px; height: 29px; padding: 4px; border-radius: 8px; color: #fff; background: linear-gradient(35deg,#feda75,#fa7e1e 26%,#d62976 55%,#962fbf 78%,#4f5bd5); }
+
+.tourism-teaser { position: relative; overflow: hidden; background: #122741; color: #f8f5eb; padding-block: clamp(4rem, 7vw, 7rem); }
+.tourism-teaser::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 30%, #34587d55, transparent 48%); pointer-events: none; }
+.tourism-teaser-grid { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; position: relative; }
+.tourism-teaser h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(2.5rem, 5vw, 5.2rem); font-weight: 400; line-height: 1.08; margin: 1rem 0 1.5rem; }
+.tourism-teaser h2 em { color: #e8bd55; }
+.tourism-teaser p { max-width: 38rem; color: #d7e0e6; line-height: 1.7; font-size: 1.08rem; margin-bottom: 2rem; }
+.tourism-teaser .button { display: inline-flex; align-items: center; gap: .6rem; border-color: #e8bd55; color: #f9f5e9; }
+.tourism-teaser-photo { display: block; aspect-ratio: 1.6; overflow: hidden; border-radius: 1.3rem; box-shadow: 0 2rem 4rem #0005; }
+.tourism-teaser-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s ease; }
+.tourism-teaser-photo:hover img { transform: scale(1.035); }
+
+.clinical-endo .updated-clinical-carousel .dual-images { display: block; }
+.clinical-endo .updated-clinical-carousel .photo-frame:first-child { width: 100%; }
+.updated-clinical-carousel .photo-frame[hidden] { display: none !important; }
+.updated-clinical-carousel .carousel-controls { display: none !important; }
+
+.cristal-carousel { overflow: hidden; }
+.cristal-carousel .cristal-second-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: cristal-photo-fade 9s ease-in-out infinite; }
+@keyframes cristal-photo-fade { 0%, 42%, 100% { opacity: 0; } 50%, 90% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .cristal-carousel .cristal-second-photo { animation: none; } }
+.cristal-carousel .team-biography-trigger { z-index: 3; }
+
+.cristal-biography-dialog { width: min(870px, calc(100vw - 2rem)); max-height: min(84vh, 850px); padding: 0; border: 0; border-radius: 1.15rem; overflow: auto; background: #f7f3eb; color: #142a42; box-shadow: 0 2rem 5rem #07172799; }
+.cristal-biography-dialog::backdrop { background: #061929bd; backdrop-filter: blur(8px); }
+.cristal-biography-dialog[open] { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); }
+.cristal-dialog-photo { min-height: 420px; }
+.cristal-dialog-photo img { width: 100%; height: 100%; object-fit: cover; }
+.cristal-dialog-copy { align-self: center; padding: clamp(2rem, 5vw, 4.25rem); }
+.cristal-dialog-copy small { color: #8c6b2c; letter-spacing: .13em; font-size: .78rem; }
+.cristal-dialog-copy h2 { font-family: 'Fraunces', Georgia, serif; font-size: clamp(2.3rem, 4vw, 3.7rem); line-height: 1.08; font-weight: 400; margin: 1rem 0 2rem; }
+.cristal-dialog-copy p { line-height: 1.72; margin: 0 0 1rem; }
+.cristal-dialog-close { position: absolute; top: 1rem; right: 1rem; z-index: 2; border: 1px solid #d7cfbc; border-radius: 50%; background: #fff; width: 2.6rem; height: 2.6rem; color: #142a42; font-size: 1.6rem; cursor: pointer; }
+
+@media (max-width: 780px) {
+  .footer-grid-three { grid-template-columns: 1fr !important; }
+  .tourism-teaser-grid { grid-template-columns: 1fr; }
+  .tourism-teaser-photo { order: -1; aspect-ratio: 1.45; }
+  .cristal-biography-dialog[open] { grid-template-columns: 1fr; }
+  .cristal-dialog-photo { min-height: 0; height: 260px; }
+}

@@ -110,4 +110,24 @@
 <xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/tratamientos/endodoncia" />
 <xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/treatments/endodontics" />
 </url>
+<url>
+<loc>https://prontialatam.github.io/turismo-dental/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/turismo-dental/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/dental-tourism/" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/dental-tourism/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/turismo-dental/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/dental-tourism/" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/aviso-legal/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/aviso-legal/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/legal-notice/" />
+</url>
+<url>
+<loc>https://prontialatam.github.io/en/legal-notice/</loc>
+<xhtml:link rel="alternate" hreflang="es" href="https://prontialatam.github.io/aviso-legal/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://prontialatam.github.io/en/legal-notice/" />
+</url>
 </urlset>
