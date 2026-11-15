@@ -12,7 +12,7 @@ footer = {
     'es': re.search(r'<footer class="site-footer".*?</footer>', home).group(),
     'en': re.search(r'<footer class="site-footer".*?</footer>', home_en).group(),
 }
-styles = ''.join(re.findall(r'<link rel="stylesheet"[^>]+>', home))
+styles = ''.join(link for link in re.findall(r'<link rel="stylesheet"[^>]+>', home) if '/_next/' in link)
 
 icons = {
     'ship': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18l-3 4H6l-3-4ZM12 2v13M6 8h12l-2 7H8L6 8Z"/></svg>',
