@@ -2,7 +2,7 @@
   const en = document.documentElement.lang === 'en';
   const travelPath = en ? '/en/dental-tourism/' : '/turismo-dental/';
   const legalPath = en ? '/en/legal-notice/' : '/aviso-legal/';
-  const plane = '<svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 21h-3l-2-7-5 3v4h-2l-1-6.5L2 13v-2l2.5-1.5L5.5 3h2v4l5 3 2-7h3l-1 8 5 1v2l-5 1z"/></svg>';
+  const plane = '<svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 16 8-3-6-7 2-1 8 6 6-2a2 2 0 0 1 2 2c0 1-.6 1.6-2 2l-6 2-3 9-2-1 1-8-8 3Z"/></svg>';
   const instagram = '<svg aria-hidden="true" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
 
   function enhanceNav() {
