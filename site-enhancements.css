@@ -17,10 +17,26 @@ header nav [data-travel-nav] svg { color: #e4bb55; flex: none; }
 .tourism-teaser-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s ease; }
 .tourism-teaser-photo:hover img { transform: scale(1.035); }
 
-.clinical-endo .updated-clinical-carousel .dual-images { display: block; }
-.clinical-endo .updated-clinical-carousel .photo-frame:first-child { width: 100%; }
-.updated-clinical-carousel .photo-frame[hidden] { display: none !important; }
-.updated-clinical-carousel .carousel-controls { display: none !important; }
+.dual-carousel[hidden] { display: none !important; }
+.dual-carousel .photo-label { display: none !important; }
+.clinical-treatment-gallery { min-width: 0; width: 100%; align-self: center; }
+.clinical-gallery-stage { position: relative; overflow: hidden; border-radius: 1.1rem; background: #10243b; box-shadow: 0 1.5rem 3rem #0d24312e; }
+.clinical-gallery-open { display: block; width: 100%; height: clamp(290px, 36vw, 520px); padding: 0; border: 0; background: transparent; cursor: zoom-in; position: relative; }
+.clinical-gallery-open img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.clinical-gallery-open span { position: absolute; right: 1rem; bottom: 1rem; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; background: #f8f4e9e8; color: #10243b; border-radius: 50%; font-size: 1.4rem; }
+.clinical-gallery-prev,.clinical-gallery-next { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 2.5rem; height: 2.5rem; padding: 0; border: 1px solid #ffffff99; border-radius: 50%; background: #10243bba; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+.clinical-gallery-prev { left: .8rem; }
+.clinical-gallery-next { right: .8rem; }
+.clinical-gallery-prev:hover,.clinical-gallery-next:hover { background: #dcb95f; color: #10243b; }
+.clinical-gallery-meta { display: flex; justify-content: space-between; gap: 1rem; color: #5a6b78; font-size: .72rem; font-weight: 700; letter-spacing: .11em; margin: .9rem .2rem; }
+.clinical-gallery-thumbnails { display: flex; gap: .5rem; overflow-x: auto; padding: .25rem .1rem .55rem; scrollbar-width: thin; }
+.clinical-gallery-thumbnails button { flex: 0 0 76px; height: 64px; padding: 0; border: 2px solid transparent; border-radius: .5rem; overflow: hidden; background: #e7ebeb; cursor: pointer; }
+.clinical-gallery-thumbnails button[aria-current="true"] { border-color: #c8a64b; box-shadow: 0 0 0 2px #c8a64b33; }
+.clinical-gallery-thumbnails img { width: 100%; height: 100%; object-fit: cover; }
+.clinical-gallery-dialog { width: min(94vw, 1100px); max-width: 94vw; max-height: 94vh; padding: 1.1rem; border: 0; border-radius: 1rem; background: #11283f; box-shadow: 0 2rem 5rem #0008; }
+.clinical-gallery-dialog::backdrop { background: #071828d9; backdrop-filter: blur(7px); }
+.clinical-gallery-dialog img { display: block; width: 100%; max-height: calc(94vh - 2.2rem); object-fit: contain; }
+.clinical-gallery-dialog button { position: absolute; z-index: 1; top: 1.5rem; right: 1.5rem; display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border: 0; border-radius: 50%; background: #fff; color: #10243b; font-size: 1.7rem; cursor: pointer; }
 
 .cristal-carousel { overflow: hidden; }
 .cristal-carousel .cristal-second-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: cristal-photo-fade 9s ease-in-out infinite; }

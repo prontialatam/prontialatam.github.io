@@ -59,27 +59,70 @@
       img.src = '/images/drive/periodoncia-2026-2.jpg';
       img.alt = en ? 'Implandent periodontal clinical case' : 'Caso clínico de periodoncia de Implandent';
     });
-    const path = location.pathname;
-    const endo = /\/(endodoncia|endodontics)\/$/.test(path);
-    const perio = /\/(periodoncia|periodontics)\/$/.test(path);
-    if (!endo && !perio) return;
-    document.querySelectorAll('.dual-carousel').forEach((carousel) => {
-      carousel.classList.add('updated-clinical-carousel');
-      const frames = carousel.querySelectorAll('.photo-frame');
-      if (!frames.length) return;
-      frames[0].querySelector('img').src = endo ? '/images/drive/endodoncia-2026.jpg' : '/images/drive/periodoncia-2026-1.jpg';
-      frames[0].querySelector('img').alt = endo ? 'Endodoncia: registro clínico de Implandent' : 'Periodoncia: atención clínica en Implandent';
-      if (frames[1]) {
-        if (endo) frames[1].hidden = true;
-        else {
-          frames[1].querySelector('img').src = '/images/drive/periodoncia-2026-2.jpg';
-          frames[1].querySelector('img').alt = 'Periodoncia: evolución clínica facilitada por Implandent';
-        }
-      }
-      carousel.querySelectorAll('.photo-label').forEach((label) => { label.textContent = en ? 'Implandent clinical image' : 'Registro clínico Implandent'; });
-      carousel.querySelector('.carousel-controls')?.remove();
+    const treatmentPhotos = {
+      'implantes-dentales': Array.from({ length: 9 }, (_, index) => `/images/drive/case-implant-${index}.jpg`),
+      'dental-implants': Array.from({ length: 9 }, (_, index) => `/images/drive/case-implant-${index}.jpg`),
+      'protesis-dentales': ['/images/drive/case-cover-protesis.jpg', '/images/drive/case-protesis-1.jpg'],
+      'dental-prosthetics': ['/images/drive/case-cover-protesis.jpg', '/images/drive/case-protesis-1.jpg'],
+      'periodoncia': ['/images/drive/periodoncia-2026-1.jpg', '/images/drive/periodoncia-2026-2.jpg'],
+      'periodontics': ['/images/drive/periodoncia-2026-1.jpg', '/images/drive/periodoncia-2026-2.jpg'],
+      'ortodoncia': ['/images/drive/case-ortho-0.jpg', '/images/drive/case-ortho-1.jpg', '/images/drive/case-ortho-2.jpg'],
+      'orthodontics': ['/images/drive/case-ortho-0.jpg', '/images/drive/case-ortho-1.jpg', '/images/drive/case-ortho-2.jpg'],
+      'cirugia-bucal': ['/images/drive/case-cover-cirugia.jpg'],
+      'oral-surgery': ['/images/drive/case-cover-cirugia.jpg'],
+      'odontopediatria': ['/images/drive/cristal-naomi-clinic.png'],
+      'pediatric-dentistry': ['/images/drive/cristal-naomi-clinic.png'],
+      'estetica-dental': ['/images/drive/case-cover-estetica.jpg', '/images/drive/case-estetica-1.jpg'],
+      'aesthetic-dentistry': ['/images/drive/case-cover-estetica.jpg', '/images/drive/case-estetica-1.jpg'],
+      'endodoncia': ['/images/drive/endodoncia-2026.jpg'],
+      'endodontics': ['/images/drive/endodoncia-2026.jpg'],
+    };
+    const slug = location.pathname.split('/').filter(Boolean).at(-1);
+    const photos = treatmentPhotos[slug];
+    const carousel = document.querySelector('.dual-carousel');
+    if (!photos || !carousel || document.querySelector('.clinical-treatment-gallery')) return;
+    const treatmentName = document.querySelector('h1 .sr-only')?.textContent?.trim() || document.title.split('|')[0].trim() || (en ? 'Treatment' : 'Tratamiento');
+    carousel.hidden = true;
+    carousel.setAttribute('aria-hidden', 'true');
+    const gallery = document.createElement('div');
+    gallery.className = 'clinical-treatment-gallery';
+    gallery.innerHTML = `<div class="clinical-gallery-stage"><button type="button" class="clinical-gallery-open" aria-label="${en ? 'Enlarge clinical image' : 'Ampliar imagen clínica'}"><img alt="" src="${photos[0]}"><span aria-hidden="true">↗</span></button>${photos.length > 1 ? '<button type="button" class="clinical-gallery-prev" aria-label="' + (en ? 'Previous image' : 'Imagen anterior') + '">‹</button><button type="button" class="clinical-gallery-next" aria-label="' + (en ? 'Next image' : 'Imagen siguiente') + '">›</button>' : ''}</div><div class="clinical-gallery-meta"><span>${en ? 'IMPLANDENT · CLINICAL PHOTOGRAPHS' : 'IMPLANDENT · FOTOGRAFÍAS CLÍNICAS'}</span><span class="clinical-gallery-count"></span></div>${photos.length > 1 ? '<div class="clinical-gallery-thumbnails" aria-label="' + (en ? 'Clinical image gallery' : 'Galería de imágenes clínicas') + '"></div>' : ''}`;
+    carousel.after(gallery);
+    const stageImage = gallery.querySelector('.clinical-gallery-open img');
+    const thumbnails = gallery.querySelector('.clinical-gallery-thumbnails');
+    let current = 0;
+    function render(index) {
+      current = (index + photos.length) % photos.length;
+      stageImage.src = photos[current];
+      stageImage.alt = `${treatmentName} · ${en ? 'real clinical photograph' : 'fotografía clínica real'} ${current + 1}`;
+      gallery.querySelector('.clinical-gallery-count').textContent = `${String(current + 1).padStart(2, '0')} / ${String(photos.length).padStart(2, '0')}`;
+      thumbnails?.querySelectorAll('button').forEach((button, i) => {
+        button.setAttribute('aria-current', String(i === current));
+      });
+    }
+    if (thumbnails) {
+      photos.forEach((src, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('aria-label', `${en ? 'Show image' : 'Ver imagen'} ${index + 1}`);
+        button.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
+        button.addEventListener('click', () => render(index));
+        thumbnails.append(button);
+      });
+    }
+    gallery.querySelector('.clinical-gallery-prev')?.addEventListener('click', () => render(current - 1));
+    gallery.querySelector('.clinical-gallery-next')?.addEventListener('click', () => render(current + 1));
+    gallery.querySelector('.clinical-gallery-open').addEventListener('click', () => {
+      const dialog = document.createElement('dialog');
+      dialog.className = 'clinical-gallery-dialog';
+      dialog.innerHTML = `<button type="button" aria-label="${en ? 'Close image' : 'Cerrar imagen'}">×</button><img src="${photos[current]}" alt="${stageImage.alt}">`;
+      document.body.append(dialog);
+      dialog.querySelector('button').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+      dialog.addEventListener('close', () => dialog.remove(), { once: true });
+      dialog.showModal();
     });
-    document.body.classList.add(endo ? 'clinical-endo' : 'clinical-perio');
+    render(0);
   }
 
   function enhanceCristal() {
