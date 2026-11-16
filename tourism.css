@@ -4,7 +4,7 @@
 .tourism-page a { text-underline-offset: .22em; }
 .tourism-wrap { width: min(1180px, calc(100% - 3rem)); margin-inline: auto; }
 .tourism-hero { position: relative; display: flex; align-items: center; min-height: min(720px, 75vh); color: #fff; overflow: hidden; background: #102942; }
-.tourism-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#0b223be8 0%,#0d2a46ae 48%,#0b223b19 100%),url('/images/turismo/hero.png') center/cover; }
+.tourism-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#0b223be8 0%,#0d2a46ae 48%,#0b223b19 100%),url('/images/turismo/hero.webp') center/cover; }
 .tourism-hero-inner { position: relative; padding-block: 6rem; }
 .tourism-eyebrow { color: #e4bd63; font-size: .78rem; letter-spacing: .19em; text-transform: uppercase; font-weight: 650; }
 .tourism-hero h1 { font-size: clamp(3.1rem,7vw,7.3rem); line-height: 1.02; letter-spacing: -.045em; max-width: 11.5ch; margin: 1.25rem 0 1.5rem; }
@@ -72,7 +72,7 @@
 @media (max-width: 720px) {
   .tourism-wrap { width: min(100% - 2rem,1180px); }
   .tourism-hero { min-height: 590px; }
-  .tourism-hero::before { background: linear-gradient(90deg,#0b223be3,#0b223b8a),url('/images/turismo/hero.png') 67% center/cover; }
+  .tourism-hero::before { background: linear-gradient(90deg,#0b223be3,#0b223b8a),url('/images/turismo/hero.webp') 67% center/cover; }
   .tourism-intro-grid,.tourism-doctor-grid,.tourism-feature { grid-template-columns: 1fr; }
   .tourism-guide-heading { display: block; }
   .tourism-tabs { display: flex; overflow-x: auto; scrollbar-width: thin; padding-bottom: .9rem; }

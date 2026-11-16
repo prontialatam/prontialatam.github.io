@@ -62,3 +62,7 @@ header nav [data-travel-nav] svg { color: #e4bb55; flex: none; }
   .cristal-biography-dialog[open] { grid-template-columns: 1fr; }
   .cristal-dialog-photo { min-height: 0; height: 260px; }
 }
+
+@media (max-width: 700px) {
+  .premium-hero-media { background-image: url('/video/implant-mobile-poster.webp'); }
+}

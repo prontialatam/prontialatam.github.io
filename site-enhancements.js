@@ -70,8 +70,8 @@
       'orthodontics': ['/images/drive/case-ortho-0.jpg', '/images/drive/case-ortho-1.jpg', '/images/drive/case-ortho-2.jpg'],
       'cirugia-bucal': ['/images/drive/case-cover-cirugia.jpg'],
       'oral-surgery': ['/images/drive/case-cover-cirugia.jpg'],
-      'odontopediatria': ['/images/drive/cristal-naomi-clinic.png'],
-      'pediatric-dentistry': ['/images/drive/cristal-naomi-clinic.png'],
+      'odontopediatria': ['/images/drive/cristal-naomi-clinic.webp'],
+      'pediatric-dentistry': ['/images/drive/cristal-naomi-clinic.webp'],
       'estetica-dental': ['/images/drive/case-cover-estetica.jpg', '/images/drive/case-estetica-1.jpg'],
       'aesthetic-dentistry': ['/images/drive/case-cover-estetica.jpg', '/images/drive/case-estetica-1.jpg'],
       'endodoncia': ['/images/drive/endodoncia-2026.jpg'],
@@ -133,7 +133,7 @@
     if (!photo) return;
     photo.classList.add('cristal-carousel');
     const second = document.createElement('img');
-    second.src = '/images/drive/cristal-naomi-clinic.png';
+    second.src = '/images/drive/cristal-naomi-clinic.webp';
     second.alt = en ? 'Dr. Cristal Naomi Bautista with a pediatric patient' : 'Dra. Cristal Naomi Bautista con una paciente infantil';
     second.className = 'cristal-second-photo';
     second.loading = 'lazy';
@@ -154,7 +154,7 @@
       dialog = document.createElement('dialog');
       dialog.id = 'cristal-biography';
       dialog.className = 'cristal-biography-dialog';
-      dialog.innerHTML = `<button type="button" class="cristal-dialog-close" aria-label="${en ? 'Close biography' : 'Cerrar biografía'}">×</button><div class="cristal-dialog-photo"><img src="/images/drive/cristal-naomi-clinic.png" alt="Dra. Cristal Naomi Bautista"/></div><div class="cristal-dialog-copy"><small>IMPLANDENT · ${en ? 'PEDIATRIC DENTISTRY' : 'ODONTOPEDIATRÍA'}</small><h2>${en ? 'Dr. Cristal Naomi Bautista' : 'Dra. Cristal Naomi Bautista'}</h2><p>${en ? 'I am Cristal Bautista Sánchez, a dentist who graduated from Universidad Nacional Pedro Henríquez Ureña (UNPHU) on July 19, 2017.' : 'Mi nombre es Cristal Bautista Sánchez, odontóloga egresada de la Universidad Nacional Pedro Henríquez Ureña (UNPHU) el 19 de julio de 2017.'}</p><p>${en ? 'I specialized in pediatric dentistry and care for patients with disabilities at Universidad Iberoamericana (UNIBE) in 2023.' : 'Especialista en Odontopediatría y manejo de pacientes con discapacidades por la Universidad Iberoamericana (UNIBE) en el año 2023.'}</p></div>`;
+      dialog.innerHTML = `<button type="button" class="cristal-dialog-close" aria-label="${en ? 'Close biography' : 'Cerrar biografía'}">×</button><div class="cristal-dialog-photo"><img src="/images/drive/cristal-naomi-clinic.webp" alt="Dra. Cristal Naomi Bautista"/></div><div class="cristal-dialog-copy"><small>IMPLANDENT · ${en ? 'PEDIATRIC DENTISTRY' : 'ODONTOPEDIATRÍA'}</small><h2>${en ? 'Dr. Cristal Naomi Bautista' : 'Dra. Cristal Naomi Bautista'}</h2><p>${en ? 'I am Cristal Bautista Sánchez, a dentist who graduated from Universidad Nacional Pedro Henríquez Ureña (UNPHU) on July 19, 2017.' : 'Mi nombre es Cristal Bautista Sánchez, odontóloga egresada de la Universidad Nacional Pedro Henríquez Ureña (UNPHU) el 19 de julio de 2017.'}</p><p>${en ? 'I specialized in pediatric dentistry and care for patients with disabilities at Universidad Iberoamericana (UNIBE) in 2023.' : 'Especialista en Odontopediatría y manejo de pacientes con discapacidades por la Universidad Iberoamericana (UNIBE) en el año 2023.'}</p></div>`;
       document.body.append(dialog);
       dialog.querySelector('.cristal-dialog-close').addEventListener('click', () => dialog.close());
       dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
@@ -169,7 +169,7 @@
     const section = document.createElement('section');
     section.id = 'turismo-dental';
     section.className = 'premium-section tourism-teaser';
-    section.innerHTML = `<div class="shell tourism-teaser-grid"><div class="tourism-teaser-copy"><span class="premium-overline">${en ? 'DENTAL TOURISM · LA ROMANA' : 'TURISMO DENTAL · LA ROMANA'}</span><h2>${en ? 'Travel for care. Return with a new <em>smile.</em>' : 'Viaja por tu salud. Regresa con una nueva <em>sonrisa.</em>'}</h2><p>${en ? 'Meet Dr. Carela and plan your dental care in La Romana, where clinical attention meets Dominican hospitality.' : 'Conoce al Dr. Carela y planifica tu atención odontológica en La Romana, donde el cuidado clínico se encuentra con la hospitalidad dominicana.'}</p><a class="button button-outline" href="${travelPath}">${en ? 'Explore dental tourism' : 'Explorar Turismo Dental'} ${plane}</a></div><a class="tourism-teaser-photo" href="${travelPath}" aria-label="${en ? 'Explore dental tourism' : 'Explorar Turismo Dental'}"><img src="/images/turismo/hero.png" alt="${en ? 'Illustrative Caribbean dental tourism scene' : 'Escena ilustrativa de turismo dental en el Caribe'}" loading="lazy"/></a></div>`;
+    section.innerHTML = `<div class="shell tourism-teaser-grid"><div class="tourism-teaser-copy"><span class="premium-overline">${en ? 'DENTAL TOURISM · LA ROMANA' : 'TURISMO DENTAL · LA ROMANA'}</span><h2>${en ? 'Travel for care. Return with a new <em>smile.</em>' : 'Viaja por tu salud. Regresa con una nueva <em>sonrisa.</em>'}</h2><p>${en ? 'Meet Dr. Carela and plan your dental care in La Romana, where clinical attention meets Dominican hospitality.' : 'Conoce al Dr. Carela y planifica tu atención odontológica en La Romana, donde el cuidado clínico se encuentra con la hospitalidad dominicana.'}</p><a class="button button-outline" href="${travelPath}">${en ? 'Explore dental tourism' : 'Explorar Turismo Dental'} ${plane}</a></div><a class="tourism-teaser-photo" href="${travelPath}" aria-label="${en ? 'Explore dental tourism' : 'Explorar Turismo Dental'}"><img src="/images/turismo/hero.webp" alt="${en ? 'Illustrative Caribbean dental tourism scene' : 'Escena ilustrativa de turismo dental en el Caribe'}" loading="lazy"/></a></div>`;
     cases.before(section);
   }
 
