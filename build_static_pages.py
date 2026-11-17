@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+from html import escape
 
 root = Path(__file__).parent
 home = (root / 'index.html').read_text()
@@ -30,7 +31,20 @@ def page(lang, title, description, body, suffix=''):
     nav = re.sub(r'(<a class="language-option"[^>]*href=")[^"]+', lambda match: match.group(1) + alternate, nav, count=1)
     script = '<script src="/typewriter-titles.js?v=20261115c" defer></script><script src="/site-enhancements.js?v=20261116a" defer></script><script src="/tourism.js?v=20261115c" defer></script>'
     preload = '<link rel="preload" as="image" href="/images/turismo/hero.webp">' if suffix in {'/turismo-dental/', '/en/dental-tourism/'} else ''
-    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{description}"><meta name="theme-color" content="#142d48">{styles}<link rel="stylesheet" href="/typewriter-titles.css?v=20261115c"><link rel="stylesheet" href="/site-enhancements.css?v=20261116a"><link rel="stylesheet" href="/tourism.css?v=20261116a">{preload}<link rel="canonical" href="https://www.implandentrd.com{suffix}"></head><body>{nav}<div id="main-content">{body}</div>{foot}{script}</body></html>'''
+    canonical = f'https://www.implandentrd.com{suffix}'
+    pair = {'/turismo-dental/': '/en/dental-tourism/', '/en/dental-tourism/': '/turismo-dental/', '/aviso-legal/': '/en/legal-notice/', '/en/legal-notice/': '/aviso-legal/'}[suffix]
+    es_url = canonical if not is_en else f'https://www.implandentrd.com{pair}'
+    en_url = canonical if is_en else f'https://www.implandentrd.com{pair}'
+    social = ''.join([
+        f'<link rel="alternate" hreflang="es" href="{es_url}">',
+        f'<link rel="alternate" hreflang="en" href="{en_url}">',
+        f'<link rel="alternate" hreflang="x-default" href="{es_url}">',
+        f'<meta property="og:type" content="website"><meta property="og:locale" content="{ "en_US" if is_en else "es_DO" }">',
+        f'<meta property="og:title" content="{escape(title, quote=True)}"><meta property="og:description" content="{escape(description, quote=True)}">',
+        f'<meta property="og:url" content="{canonical}"><meta property="og:image" content="https://www.implandentrd.com/brand/implandent-logo.png">',
+        '<meta name="twitter:card" content="summary_large_image">',
+    ])
+    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{description}"><meta name="theme-color" content="#142d48">{styles}<link rel="stylesheet" href="/typewriter-titles.css?v=20261115c"><link rel="stylesheet" href="/site-enhancements.css?v=20261116a"><link rel="stylesheet" href="/tourism.css?v=20261116a">{preload}<link rel="canonical" href="{canonical}">{social}</head><body>{nav}<div id="main-content">{body}</div>{foot}{script}</body></html>'''
 
 def tab(index, icon, label):
     return f'<button type="button" role="tab" id="tourism-tab-{index}" aria-controls="tourism-panel-{index}" aria-selected="{str(index == 0).lower()}" tabindex="{0 if index == 0 else -1}">{icons[icon]}<span>{label}</span></button>'
@@ -102,9 +116,9 @@ legal_en = '''<main class="legal-static"><div class="tourism-wrap"><span class="
 for lang, route in [('es','turismo-dental'),('en','en/dental-tourism')]:
     p = root / route / 'index.html'
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(page(lang, 'Turismo Dental | Implandent La Romana' if lang == 'es' else 'Dental Tourism | Implandent La Romana', 'Turismo dental en La Romana con el Dr. Carela: atención, viaje, alojamiento y clima.' if lang == 'es' else 'Plan dental tourism in La Romana with Dr. Carela: care, travel, accommodation and climate.', tourism_body(lang), '/' + route + '/'))
+    p.write_text(page(lang, 'Turismo dental en La Romana | Implandent' if lang == 'es' else 'Dental tourism in La Romana | Implandent', 'Planifica tu turismo dental en La Romana con el Dr. Carela. Conoce el equipo, las opciones de viaje y alojamiento y solicita una valoración personalizada.' if lang == 'es' else 'Plan dental care in La Romana with Dr. Carela. Meet the team, explore travel and accommodation options, and request an individual consultation.', tourism_body(lang), '/' + route + '/'))
 
 for lang, route, body in [('es','aviso-legal',legal_es),('en','en/legal-notice',legal_en)]:
     p = root / route / 'index.html'
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(page(lang, 'Aviso Legal | Implandent' if lang == 'es' else 'Legal Notice | Implandent', 'Información legal de Clínica Odontológica Especializada Implandent SRL.' if lang == 'es' else 'Legal information for Clínica Odontológica Especializada Implandent SRL.', body, '/' + route + '/'))
+    p.write_text(page(lang, 'Aviso legal | Implandent, La Romana' if lang == 'es' else 'Legal notice | Implandent, La Romana', 'Consulta los datos de la Clínica Odontológica Especializada Implandent SRL, el titular del sitio, las condiciones de uso y los canales de contacto.' if lang == 'es' else 'Find the legal details of Clínica Odontológica Especializada Implandent SRL, website terms of use and contact information.', body, '/' + route + '/'))
