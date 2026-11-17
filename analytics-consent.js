@@ -71,6 +71,6 @@
     }
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  if (document.readyState === 'complete') window.setTimeout(init, 800);
+  else window.addEventListener('load', function () { window.setTimeout(init, 800); }, { once: true });
 })();
