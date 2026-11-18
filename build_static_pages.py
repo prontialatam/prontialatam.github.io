@@ -29,7 +29,7 @@ def page(lang, title, description, body, suffix=''):
     foot = footer[lang]
     alternate = ('/en/dental-tourism/' if suffix == '/turismo-dental/' else '/turismo-dental/') if 'touris' in suffix or 'turismo' in suffix else ('/en/legal-notice/' if lang == 'es' else '/aviso-legal/')
     nav = re.sub(r'(<a class="language-option"[^>]*href=")[^"]+', lambda match: match.group(1) + alternate, nav, count=1)
-    script = '<script src="/typewriter-titles.js?v=20261115c" defer></script><script src="/site-enhancements.js?v=20261116a" defer></script><script src="/tourism.js?v=20261115c" defer></script>'
+    script = '<script src="/typewriter-titles.js?v=20261115c" defer></script><script src="/site-enhancements.js?v=20261116a" defer></script><script src="/tourism.js?v=20261118a" defer></script>'
     preload = '<link rel="preload" as="image" href="/images/turismo/hero.webp">' if suffix in {'/turismo-dental/', '/en/dental-tourism/'} else ''
     canonical = f'https://www.implandentrd.com{suffix}'
     pair = {'/turismo-dental/': '/en/dental-tourism/', '/en/dental-tourism/': '/turismo-dental/', '/aviso-legal/': '/en/legal-notice/', '/en/legal-notice/': '/aviso-legal/'}[suffix]
@@ -44,7 +44,7 @@ def page(lang, title, description, body, suffix=''):
         f'<meta property="og:url" content="{canonical}"><meta property="og:image" content="https://www.implandentrd.com/brand/implandent-logo.png">',
         '<meta name="twitter:card" content="summary_large_image">',
     ])
-    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{description}"><meta name="theme-color" content="#142d48">{styles}<link rel="stylesheet" href="/typewriter-titles.css?v=20261115c"><link rel="stylesheet" href="/site-enhancements.css?v=20261116a"><link rel="stylesheet" href="/tourism.css?v=20261116a"><link rel="stylesheet" href="/analytics-consent.css?v=20261117b"><script src="/analytics-consent.js?v=20261117b" defer></script>{preload}<link rel="canonical" href="{canonical}">{social}</head><body>{nav}<div id="main-content">{body}</div>{foot}{script}</body></html>'''
+    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{description}"><meta name="theme-color" content="#142d48">{styles}<link rel="stylesheet" href="/typewriter-titles.css?v=20261115c"><link rel="stylesheet" href="/site-enhancements.css?v=20261118a"><link rel="stylesheet" href="/tourism.css?v=20261118a"><link rel="stylesheet" href="/analytics-consent.css?v=20261117b"><script src="/analytics-consent.js?v=20261117b" defer></script>{preload}<link rel="canonical" href="{canonical}">{social}</head><body>{nav}<div id="main-content">{body}</div>{foot}{script}</body></html>'''
 
 def tab(index, icon, label):
     return f'<button type="button" role="tab" id="tourism-tab-{index}" aria-controls="tourism-panel-{index}" aria-selected="{str(index == 0).lower()}" tabindex="{0 if index == 0 else -1}">{icons[icon]}<span>{label}</span></button>'

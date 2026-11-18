@@ -1,5 +1,9 @@
 header nav [data-travel-nav] { display: inline-flex; align-items: center; gap: .4rem; }
 header nav [data-travel-nav] svg { color: #e4bb55; flex: none; }
+@media (max-width: 900px) {
+  .site-header:has(.mobile-menu),
+  .tourism-menu-open .site-header { z-index: 10001; }
+}
 
 .footer-grid-three { grid-template-columns: 1.35fr .9fr 1.3fr !important; gap: clamp(2rem, 5vw, 5rem); }
 .footer-instagram { display: inline-flex !important; align-items: center; gap: .65rem; margin-top: 1rem; color: #e9c568 !important; width: fit-content; }
